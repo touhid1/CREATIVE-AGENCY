@@ -1,0 +1,101 @@
+.dashboard-wrapper {
+	width: 100%;
+	height: 100vh;
+}
+
+.dashboard-data {
+	background: #f4f7fc;
+}
+
+.dashboard-data header {
+	background: #fff;
+}
+
+.sidebar-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.sidebar-buttons .btn i {
+	margin-right: 5px;
+}
+
+form.order-form {
+	max-width: 570px;
+}
+
+form.order-form .form-control,
+form.order-form .form-control::placeholder {
+	color: rgba(0, 0, 0, 0.3);
+}
+
+form.order-form .form-control {
+	height: 60px;
+	border: none;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.396px;
+	color: rgb(0 0 0 / 53%);
+	padding: 15px;
+	border-radius: 5px;
+}
+
+input.form-control[type="file"] {
+	background: #deffed;
+	border: 1px solid #009444;
+	box-sizing: border-box;
+	color: #009444;
+}
+
+.service-list-card {
+	background: #ffffff;
+	border-radius: 20px;
+	padding: 24px;
+}
+
+.service-list-card img {
+	width: 74px;
+	height: 74px;
+	border-radius: 50%;
+	margin-right: auto;
+}
+
+.service-list-card button.btn {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	padding: 9px 23px;
+}
+
+.service-list-card h4 {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.5;
+	letter-spacing: 0.396px;
+	color: #111430;
+}
+
+.service-list-card p {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.396px;
+	color: rgba(0, 0, 0, 0.7);
+	margin-bottom: 0;
+}
+
+.dashboard-data header div {
+	display: flex;
+	align-items: center;
+}
+
+.dashboard-data header div > img {
+	width: 33px;
+	border-radius: 50%;
+	margin-right: 4px;
+}
+.dashboard-data header div > i {
+	margin-right: 4px;
+}
