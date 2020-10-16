@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
-import firebaseConfig from '../../firebase.config/firebase.config';
+import firebaseConfig from './firebase.config';
 import './Login.css';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import logo from '../../images/logos/logo.png';
@@ -51,7 +51,7 @@ const Login = () => {
         fetch(`https://creativemmhkagency30313.herokuapp.com/admins?email=${email}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data.length > 0);
+            // console.log(data.length > 0);
             if(data.length > 0){
                 setLoggedInUser({});
                 setUser(data[0]);

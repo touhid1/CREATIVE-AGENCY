@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { faHdd, faPlus, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faHdd, faLocationArrow, faPlus, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AdminServiceList from './AdminServiceList/AdminServiceList';
 import AddService from './AddService/AddService';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
+import { useHistory } from 'react-router-dom';
 
-const Admin = ({user}) => {
+const Admin = ({setLoggedInUser,setUser}) => {
+    const history = useHistory();
     const [serviceList, setServiceList] = useState(true);
     const [addService, setAddService] = useState(false);
     const [makeAdmin, setMakeAdmin] = useState(false);
@@ -26,6 +28,11 @@ const Admin = ({user}) => {
             setMakeAdmin(true)
         }
     }
+    const handleSignOut = () =>{
+        setLoggedInUser({});
+        setUser({});
+        history.replace('/');
+    } 
     return (
         <section className='container-fluid m-0'>
             <div className="row">
@@ -33,6 +40,7 @@ const Admin = ({user}) => {
                     <p onClick={() => handleClick('serviceList')} style={{color: serviceList ? '#009444': 'black', cursor: 'pointer'}}><FontAwesomeIcon icon={faHdd}/> Service list</p>
                     <p onClick={() => handleClick('addService')} style={{color: addService ? '#009444': 'black', cursor: 'pointer'}}><FontAwesomeIcon icon={faPlus}/> Add Service</p>
                     <p onClick={() => handleClick('makeAdmin')} style={{color: makeAdmin ? '#009444': 'black', cursor: 'pointer'}}><FontAwesomeIcon icon={faUserPlus}/> Make Admin</p>
+                    <p onClick={() => handleSignOut()} className="text-danger" style={{cursor: 'pointer'}}><FontAwesomeIcon icon={faLocationArrow}/> Sign out</p>
                 </div>
                 <div className="col-md-10 user-maintain">
                 <div className="row justify-content-between">

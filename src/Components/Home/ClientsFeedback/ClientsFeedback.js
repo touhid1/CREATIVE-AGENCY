@@ -15,7 +15,7 @@ const ClientsFeedback = () => {
         })
     },[])
     return (
-        <section className=''>
+        <section className='perfect-bg'>
             <h3 className='my-5 w-50 text-center mx-auto feedback'>Clients <span style={{color: '#7AB259'}}>Feedback</span></h3>
             <div className="row my-5 justify-content-center">
                 {

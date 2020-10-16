@@ -10,7 +10,7 @@ const Client = ({client}) => {
                     <h6>{client.company_designation}</h6>
                 </div>
             </div>
-            <p className='center-text mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore necessitatibus. Ab, quam? Rerum.</p>
+            <p className='style-text mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore necessitatibus. Ab, quam? Rerum.</p>
         </div>
     );
 };

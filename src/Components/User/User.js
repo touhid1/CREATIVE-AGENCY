@@ -7,10 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 import Admin from './Admin/Admin';
 
 const User = () => {
-    const [loggedInUser, setLoggedInUser, user] = useContext(UserContext);
-    // useEffect use kore (loggedInUser er email diye) server theke (email gulor shathe match kore ) verify korte hobe je user ta (customer or admin). Er jonno Server (admins) namer 1ta collection thkte hobe. email match na korle user="customer" na hole user="admin"
-    // const [user, setUser] = useState("")
-    // const [user, setUser] = useState("customer");
+    const [loggedInUser, setLoggedInUser, user,setUser] = useContext(UserContext);
     const userServiceKey = useParams();
     // console.log(userServiceKey,user);
 
@@ -21,10 +18,9 @@ const User = () => {
             </Link>
             {
                 user.title === "Admin"
-                ? <Admin loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} user={user} ></Admin>
-                : <Customer userServiceKey={userServiceKey.userServiceKey}></Customer>
+                ? <Admin setLoggedInUser={setLoggedInUser} setUser={setUser}></Admin>
+                : <Customer userServiceKey={userServiceKey.userServiceKey} loggedInUser={loggedInUser}></Customer>
             }
-            {/* <Admin loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} ></Admin> */}
         </div>
     );
 };

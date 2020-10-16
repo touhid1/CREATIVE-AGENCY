@@ -11,14 +11,14 @@
         text-align: center !important;
     }
 }
-.center-text{
+/* .center-text{
     animation: color-change 8s infinite;
 }
 @keyframes color-change {
     45%{color: rgb(255, 17, 215);}
     5%{color: rgb(29, 177, 16);}
     100%{color: rgb(119, 82, 189);}
-}
+} */
 .card-deck{
     box-shadow: 3px 3px 13px gray;
     transition: all 1.5s;
@@ -43,7 +43,7 @@
     } */
 @keyframes float{
     50%{
-        transform: scale(1.05);
+        transform: scale(1.11);
     }
 }
 

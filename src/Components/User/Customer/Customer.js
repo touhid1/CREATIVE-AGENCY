@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
 import './Customer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCommentAlt, faHdd, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faCommentAlt, faHdd, faLocationArrow, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import OrderForm from './OrderForm/OrderForm';
 import ServiceList from './ServiceList/ServiceList';
 import Review from './Review/Review';
 import { UserContext } from '../../../App';
+import { useHistory } from 'react-router-dom';
 
 const Customer = ({userServiceKey}) => {
-    const [loggedInUser,setLoggedInUser,user] = useContext(UserContext);
+    const [loggedInUser,setLoggedInUser,user,setUser] = useContext(UserContext);
+    const history = useHistory();
     const [order, setOrder] = useState(true);
     const [serviceList, setServiceList] = useState(false);
     const [review, setReview] = useState(false);
@@ -52,13 +54,18 @@ const Customer = ({userServiceKey}) => {
         .then(response => response.json())
         .then(data => {
             // console.log(data);
-            alert('Welcome Your Project Is Uploaded Successfully!!!');
+            data && alert('Welcome Your Project Is Uploaded Successfully!!!');
         })
         .catch(error => {
-            console.error(error,setLoggedInUser);
+            console.error(error);
         })
     }
     // console.log(loggedInUser);
+    const handleLogout = ()=>{
+        setLoggedInUser({});
+        setUser({});
+        history.replace('/');
+    }
     return (
         <section className='container-fluid m-0'>
             <div className="row">
@@ -66,6 +73,8 @@ const Customer = ({userServiceKey}) => {
                     <p onClick={() => handleClick('order')} style={{color: order? '#009444': 'black', cursor: 'pointer'}}><FontAwesomeIcon icon={faShoppingCart }/> Order</p>
                     <p onClick={() => handleClick('service')} style={{color: serviceList? '#009444': 'black', cursor: 'pointer'}}><FontAwesomeIcon icon={faHdd}/> Service list</p>
                     <p onClick={() => handleClick('review')} style={{color: review? '#009444': 'black', cursor: 'pointer'}}><FontAwesomeIcon icon={faCommentAlt}/> Review</p>
+                    <p onClick={() => handleLogout()} className="text-danger" style={{cursor: 'pointer'}}><FontAwesomeIcon icon={faLocationArrow}/> Logout</p>
+
                 </div>
                 <div className="col-md-10 user-maintain">
                     <div className="row justify-content-between">
@@ -80,17 +89,13 @@ const Customer = ({userServiceKey}) => {
                                 review && <h4>Review</h4>
                             }
                         </div>
-                        <div className="col-md-6 text-md-right text-sm-center text-xs-center text-info">
-                            {
-                                loggedInUser.email 
-                                ? <h4 className=''>{loggedInUser.name}</h4>
-                                : <h4>{user.title}</h4>
-                            }
+                        <div className="col-md-6 text-md-right text-sm-center text-success text-xs-center">
+                            <h4>{loggedInUser.name}</h4>
                         </div>
                     </div>
                     <div className="jumbotron w-100 m-0">
                         {
-                            order && <OrderForm userServiceKey={userServiceKey} handleSubmit={handleSubmit}/>
+                            order && <OrderForm user={user} userServiceKey={userServiceKey} handleSubmit={handleSubmit}/>
                         }
                         {
                             // loggedInUser.email send kore match kore service gulo ber korte hobe...

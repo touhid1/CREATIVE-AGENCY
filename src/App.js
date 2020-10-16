@@ -25,7 +25,12 @@ function App() {
           <Route exact path='/'>
             <Home/>
           </Route>
+
           <Route path='/home'>
+            <Home/>
+          </Route>
+
+          <Route path='/user'>
             <Home/>
           </Route>
 
@@ -33,7 +38,6 @@ function App() {
             <Login/> 
           </Route>
 
-          {/* Private Route Korte Hobe */}
           <PrivateRoute path={`/user/:userServiceKey`}>
             <User/>
           </PrivateRoute>

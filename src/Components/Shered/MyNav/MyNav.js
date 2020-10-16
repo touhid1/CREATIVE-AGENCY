@@ -28,7 +28,7 @@ const MyNav = () => {
                     <Link to="/contact" className='mx-3 nav-link'>Contact Us</Link>
                     {
                         loggedInUser.email 
-                        ? <Link to='/' className='name-link text-decoration-none'>
+                        ? <Link to='/user/customer' className='name-link text-decoration-none'>
                             <img src={loggedInUser.photoURL} style={{height: '40px',borderRadius: '50px'}} alt=""/> <span className='pic-name text-info'>{loggedInUser.name.split(' ')[0]}</span>
                         </Link>
 

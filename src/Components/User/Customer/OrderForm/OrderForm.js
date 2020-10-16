@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useEffect } from 'react';
 import uploadIcon from '../../../../images/icons/cloud-upload-outline 1.png';
 const OrderForm = ({handleSubmit,userServiceKey}) => {
     const [currentService, setCurrentService] = useState({});
-    useEffect(()=>{
-        userServiceKey !== "hire_us_for_your_service" && fetch(`https://creativemmhkagency30313.herokuapp.com/services/${userServiceKey}`)
+    const fetchBusinesses = useCallback(() =>{
+        userServiceKey !== "customer" && userServiceKey !== "hire_us_for_your_service" && fetch(`https://creativemmhkagency30313.herokuapp.com/services/${userServiceKey}`)
         .then(res => res.json())
         .then(data => {
             // console.log(userServiceKey);
@@ -12,7 +12,10 @@ const OrderForm = ({handleSubmit,userServiceKey}) => {
             setCurrentService(data);
         })
         .catch(err => console.log(err))
-    },[])
+    },[userServiceKey])
+    useEffect(()=>{
+        fetchBusinesses();
+    },[fetchBusinesses])
     // const [info, setInfo] = useState({});
     // const [file, setFile] = useState(null);
     // const handleBlur = (evt) => {

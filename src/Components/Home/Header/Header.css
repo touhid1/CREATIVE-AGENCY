@@ -1,5 +1,6 @@
 .special-bg{
     position: relative;
+    min-width: 100vw;
     width: 100%;
     height: fit-content;
     left: 0px;

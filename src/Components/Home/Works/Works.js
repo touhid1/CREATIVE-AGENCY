@@ -32,7 +32,7 @@ const works = [
 ]
 const Works = () => {
     return (
-        <div className="my-carousel my-5 text-center">
+        <div className="my-carousel my-5 w-100 text-center">
             <h2 className='text-light'>Here are some of <span style={{color: '#7AB259'}}>our works</span></h2>
             <Carousel className='w-75 m-auto'>
                 {

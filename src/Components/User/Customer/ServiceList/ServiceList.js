@@ -16,7 +16,7 @@ const ServiceList = ({checkedEmail}) => {
             // console.log(data);
             setUserServices(data);
         })
-    },[]);
+    },[checkedEmail]);
     return (
         <div className="text-center">
             {/* <h2>Service List: {userServices.length}</h2> */}
