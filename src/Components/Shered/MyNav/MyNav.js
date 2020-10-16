@@ -8,7 +8,6 @@ import { useContext } from 'react';
 import { UserContext } from '../../../App';
 const MyNav = () => {
     const [loggedInUser,setLoggedInUser,user] = useContext(UserContext);
-    // console.log(loggedInUser,"\n",user);
     if(false){
         console.log(setLoggedInUser);
     }

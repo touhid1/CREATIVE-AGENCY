@@ -16,8 +16,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  // console.log(loggedInUser.email);
-  const [user, setUser] = useState({});//user = customer or admin
+  const [user, setUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser,user,setUser]}>
       <Router>

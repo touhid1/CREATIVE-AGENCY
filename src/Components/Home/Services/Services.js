@@ -10,7 +10,6 @@ const Services = () => {
         fetch(`https://creativemmhkagency30313.herokuapp.com/services`)
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
             setServices(data);
         })
         .catch(err => console.log(err))

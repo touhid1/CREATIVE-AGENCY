@@ -9,9 +9,7 @@ const ProjectForm = () => {
         }else{
             evt.preventDefault();
         }
-        // console.log(evt.target.name.value);
-        // console.log(evt.target.email.value);
-        // console.log(evt.target.message.value);
+
     }
     return (
         <section className='row justify-content-center communication-form px-5 pt-5 pb-2'>

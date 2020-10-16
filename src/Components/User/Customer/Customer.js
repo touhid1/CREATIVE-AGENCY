@@ -34,7 +34,6 @@ const Customer = ({userServiceKey}) => {
     }
     const handleSubmit = (evt)=>{
         evt.preventDefault();
-        // console.log(evt.target.file.files[0])
         const formData = new FormData();
         formData.append('customerEmail', loggedInUser.email);
         formData.append('action', 'Pending')
@@ -53,14 +52,12 @@ const Customer = ({userServiceKey}) => {
         })
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
-            data && alert('Welcome Your Project Is Uploaded Successfully!!!');
+            data && alert('Successfully!!!');
         })
         .catch(error => {
             console.error(error);
         })
     }
-    // console.log(loggedInUser);
     const handleLogout = ()=>{
         setLoggedInUser({});
         setUser({});
@@ -98,7 +95,6 @@ const Customer = ({userServiceKey}) => {
                             order && <OrderForm user={user} userServiceKey={userServiceKey} handleSubmit={handleSubmit}/>
                         }
                         {
-                            // loggedInUser.email send kore match kore service gulo ber korte hobe...
                             serviceList && <ServiceList checkedEmail={loggedInUser.email}/>
                         }
                         {

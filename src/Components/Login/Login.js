@@ -20,12 +20,10 @@ const Login = () => {
 
     let { from } = location.state || { from: { pathname: "/" } };
     const handleSignIn = () => {
-        // console.log("Here Will Be Used Firebase, useHistory, useLocation ")
         const googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(googleProvider)
         .then(result => {
             const user = result.user;
-            // console.log(user);
             const {displayName, email, photoURL, emailVerified} = user;
             const signedInUser = {
                 name: displayName,
@@ -33,7 +31,6 @@ const Login = () => {
                 photoURL: photoURL,
                 emailVerified: emailVerified
             }
-            // console.log(signedInUser);
             setLoggedInUser(signedInUser);
             setUser({title: '', email: '', img: ''})
             history.replace(from);
@@ -46,12 +43,10 @@ const Login = () => {
     }
     const handleSubmit = (evt) =>{
         evt.preventDefault();
-        // console.log(evt.target.email.value);
         const email = evt.target.email.value;
         fetch(`https://creativemmhkagency30313.herokuapp.com/admins?email=${email}`)
         .then(res => res.json())
         .then(data => {
-            // console.log(data.length > 0);
             if(data.length > 0){
                 setLoggedInUser({});
                 setUser(data[0]);
@@ -65,7 +60,6 @@ const Login = () => {
         .catch(err => {
             console.log(err);
         })
-        // setUser(admin);
     }
     return (
         <div className='d-flex flex-column justify-content-center text-center jumbotron full-page'>

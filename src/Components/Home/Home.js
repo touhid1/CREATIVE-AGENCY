@@ -10,15 +10,10 @@ const Home = () => {
     return (
         <main>
             <HomeMain/>
-            {/* Famous Company */}
             <FamousCompany/>
-            {/* Our Services */}
             <Services/>
-            {/* Our Works */}
             <Works/>
-            {/* Clients Feedback */}
             <ClientsFeedback/>
-            {/* Handle Project By Creating A Form */}
             <ProjectForm/>
         </main>
     );

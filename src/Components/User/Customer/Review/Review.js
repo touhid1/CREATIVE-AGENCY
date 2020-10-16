@@ -4,7 +4,6 @@ import { UserContext } from '../../../../App';
 
 const Review = () => {
     const [loggedInUser] = useContext(UserContext);
-    // console.log(loggedInUser);
     const handleSubmit = (evt) =>{
         evt.preventDefault();
         const clientComment = {
@@ -13,8 +12,7 @@ const Review = () => {
             company_designation: evt.target.company_designation.value,
             description: evt.target.description.value
         }
-        // console.log(loggedInUser);
-        //Comment add hoye jabe...loggedIn User er
+     
         fetch(`https://creativemmhkagency30313.herokuapp.com/clientComments`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -22,8 +20,7 @@ const Review = () => {
         })
         .then(res => {
             if(res){
-                // console.log(res);
-                alert("Your comment is successfully done!!!");
+                alert(" successfully ");
             }
         })
     }

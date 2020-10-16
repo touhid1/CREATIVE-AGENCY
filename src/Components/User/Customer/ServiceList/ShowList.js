@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ShowList = ({service}) => {
-    // console.log(service)
     return (
         <div className='col-md-5 my-2 card-deck card text-left mx-3'>
             <div className="row p-4 justify-content-between">

@@ -7,8 +7,7 @@ const OrderForm = ({handleSubmit,userServiceKey}) => {
         userServiceKey !== "customer" && userServiceKey !== "hire_us_for_your_service" && fetch(`https://creativemmhkagency30313.herokuapp.com/services/${userServiceKey}`)
         .then(res => res.json())
         .then(data => {
-            // console.log(userServiceKey);
-            // console.log(data);
+          
             setCurrentService(data);
         })
         .catch(err => console.log(err))
@@ -16,18 +15,6 @@ const OrderForm = ({handleSubmit,userServiceKey}) => {
     useEffect(()=>{
         fetchBusinesses();
     },[fetchBusinesses])
-    // const [info, setInfo] = useState({});
-    // const [file, setFile] = useState(null);
-    // const handleBlur = (evt) => {
-    //     const newInfo = {...info};
-    //     newInfo[evt.target.name] = evt.target.value;
-    //     setInfo(newInfo);
-    // }
-    // const handleFileChange = (evt) => {
-    //     const newFile = evt.target.files[0];
-    //     console.log(newFile);
-    //     setFile(newFile);
-    // }
     return (
         <form onSubmit={handleSubmit} className='w-50'>
             <div className="form-group">

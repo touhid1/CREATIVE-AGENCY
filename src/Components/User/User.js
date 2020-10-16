@@ -9,7 +9,6 @@ import Admin from './Admin/Admin';
 const User = () => {
     const [loggedInUser, setLoggedInUser, user,setUser] = useContext(UserContext);
     const userServiceKey = useParams();
-    // console.log(userServiceKey,user);
 
     return (
         <div className="p-5">

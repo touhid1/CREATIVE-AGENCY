@@ -13,18 +13,14 @@ const AdminServiceList = () => {
         fetch(`https://creativemmhkagency30313.herokuapp.com/clients`)
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
             setClientServices(data);
         })
     },[newStatus])
 
     const handleChangeStatus = (evt) =>{
         evt.preventDefault();
-        // console.log(evt.target.name, evt.target.value);
-        // console.log(evt.target.id);
         const targetAction = evt.target.value;
         const targetStyle = statuses.find(status => status.name === targetAction); 
-        // console.log(targetStyle);
         const id = evt.target.id;
         fetch(`https://creativemmhkagency30313.herokuapp.com/clients/${id}`,{
             method: "PATCH",
@@ -33,13 +29,11 @@ const AdminServiceList = () => {
         })
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
             if(data){
                 const curStatus = {...newStatus};
                 curStatus.action = targetStyle.name;
                 curStatus.actionBG = targetStyle.actionBG;
                 curStatus.actionColor = targetStyle.actionColor;
-                // console.log(curStatus)
                 setNewStatus(curStatus);
             }
         })

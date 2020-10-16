@@ -7,7 +7,6 @@
 .user-maintain{
     position: relative;
     bottom: 50px;
-    /* left: 50px; */
 }
 @media (max-width: 1391px){
     #upload-text{

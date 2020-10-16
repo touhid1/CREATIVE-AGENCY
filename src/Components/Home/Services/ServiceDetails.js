@@ -5,7 +5,6 @@ import ServiceLink from './ServiceLink';
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 25, (x - window.innerWidth / 2) / 25, 1.03];
 const trans = (x, y, s) => `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 const ServiceDetails = ({service}) => {
-    // console.log(service);
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 200, friction: 20 } }));
     return (
         
