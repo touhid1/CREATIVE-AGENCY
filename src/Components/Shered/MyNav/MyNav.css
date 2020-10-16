@@ -1,0 +1,14 @@
+.nav-link {
+    color: black !important;
+}
+.nav-link:last-child{
+    color: white !important;
+    width: 100px;
+}
+.toggle-bar{
+    background-color: rgb(14, 34, 20) !important;
+}
+.pic-name{
+    position: relative;
+    top: 5px;
+}

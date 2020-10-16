@@ -1,0 +1,13 @@
+.header-option {
+    background-color: white;
+    height: 10px;
+    margin-bottom: 40px;
+}
+
+
+.rightOption{
+    background-color: #F4F7FC;
+    min-height: 90vh;
+    flex: 1;
+    padding-top: 20px;
+}

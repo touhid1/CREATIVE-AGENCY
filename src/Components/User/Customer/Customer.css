@@ -1,0 +1,21 @@
+#upload-file{
+    display: none;
+}
+#upload-label{
+    background: #DEFFED;
+}
+.user-maintain{
+    position: relative;
+    bottom: 50px;
+    /* left: 50px; */
+}
+@media (max-width: 1391px){
+    #upload-text{
+        display: none;
+    }
+    @media(max-width: 470px) {
+        .image-upload{
+            display: none;
+        }
+    }
+}

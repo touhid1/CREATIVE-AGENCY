@@ -1,0 +1,56 @@
+@media (max-width: 751px){
+    .center-text{
+        text-align: center !important;
+    }
+}
+@media(max-width: 769px){
+    .img-name{
+        margin: 0 auto;
+    }
+    .center-text{
+        text-align: center !important;
+    }
+}
+.center-text{
+    animation: color-change 8s infinite;
+}
+@keyframes color-change {
+    45%{color: rgb(255, 17, 215);}
+    5%{color: rgb(29, 177, 16);}
+    100%{color: rgb(119, 82, 189);}
+}
+.card-deck{
+    box-shadow: 3px 3px 13px gray;
+    transition: all 1.5s;
+    cursor: pointer;
+}
+
+.card-deck:hover{
+    /* transform: rotate3d(0,1,0,-180deg); */
+    transform: rotate3d(1,0,0,-30deg) scale(1.15);
+    /* transform: rotate3d(1,0,0,-15deg) skew(5deg) scale(1.005); */
+    /* transform: rotate3d(0,0,1,-360deg); */
+    /* transform: rotate(-360deg); */
+}
+
+.feedback{
+    /*     transition: all 2s; */
+    font-family: Poppins;
+    font-weight: 800;
+    animation: float 1s ease-in-out infinite;
+}
+    /* .info h4{
+    } */
+@keyframes float{
+    50%{
+        transform: scale(1.05);
+    }
+}
+
+.center-text h5{
+    color: rgb(255, 17, 215);
+}
+
+.center-text h6{
+    color:  rgb(119, 82, 189);
+}
