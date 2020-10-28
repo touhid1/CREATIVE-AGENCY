@@ -2,7 +2,7 @@
 
 ## About
 Online Service Management Full Stack MERN Project.  
-[Live-Site](https://creative-agency-mern.web.app)
+[Live-Site](https://sharp-haibt-e10fb7.netlify.app/)
 
 ## Features 
 > Clients
